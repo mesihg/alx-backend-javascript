@@ -1,12 +1,12 @@
-process.stdin.setEncoding('utf8');
-
 console.log('Welcome to Holberton School, what is your name?\n');
 
-process.stdin.on('data', function (input) {
-  const name = input.trim();
+process.stdin.on('readable', () => {
+  const name = process.stdin.read();
+  if (name) {
+    console.log(`Your name is: ${name}`);
+  }
+});
 
-  console.log(`Your name is: ${name}`);
-
-  console.log('This important software is now closing\n');
-  process.exit();
+process.stdin.on('end', () => {
+  process.stdout.write('This important software is now closing\n');
 });
