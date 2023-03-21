@@ -12,7 +12,3 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
